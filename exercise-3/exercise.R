@@ -29,18 +29,20 @@ current.frame$columns <- rownames(current.frame)
 current.frame["Personal Care", "X1940"]
 
 # How much money was spent on Food and Tobacco in 1960
-
+current.frame["Food and Tobacco", "X1960"]
 
 # What was the highest expenditure category in 1960?
-
+current.frame$columns[current.frame$X1960 == max(current.frame$X1960)]
 
 ### Bonus ###
 
 # Write a function that takes in a year as a parameter, and 
 # returns the highest spending category of that year
-
+HighestSpender <- function(year) {
+  return (current.frame$columns[current.frame[year] == max(current.frame[year])])
+}
 # Using your function, determine the highest spending category of each year
-
+HighestSpender
 
 # Write a loop to cycle through the years, and store the highest spending category of
 # each year in a list
